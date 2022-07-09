@@ -1,5 +1,23 @@
 Rails.application.routes.draw do
   
+  namespace :store do
+    get 'genres/index'
+    get 'genres/edit'
+  end
+  namespace :admin do
+    get 'stores/index'
+    get 'stores/edit'
+  end
+  namespace :admin do
+    get 'users/index'
+    get 'users/edit'
+  end
+  namespace :store do
+    get 'items/new'
+    get 'items/index'
+    get 'items/show'
+    get 'items/edit'
+  end
   devise_for :user,controllers: {
     sessions: "user/sessions"
   }
