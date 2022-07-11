@@ -1,5 +1,22 @@
 Rails.application.routes.draw do
   
+  namespace :admin do
+    get 'reshipes/index'
+  end
+  namespace :user do
+    get 'stores/index'
+    get 'stores/show'
+  end
+  namespace :user do
+    get 'reshipes/new'
+    get 'reshipes/index'
+    get 'reshipes/show'
+    get 'reshipes/edit'
+  end
+  namespace :user do
+    get 'items/index'
+    get 'items/show'
+  end
   namespace :store do
     get 'genres/index'
     get 'genres/edit'

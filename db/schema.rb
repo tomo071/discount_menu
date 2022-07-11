@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2022_07_07_114220) do
     t.string "item_name"
     t.integer "price"
     t.integer "genre_id"
+    t.boolean "discount", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
