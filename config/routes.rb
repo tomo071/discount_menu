@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   end
   namespace :store do
     resources :genres, only: [:index, :create, :edit, :update]
+    resources :items
   end
   namespace :admin do
     get 'stores/index'
@@ -29,12 +30,7 @@ Rails.application.routes.draw do
     get 'users/index'
     get 'users/edit'
   end
-  namespace :store do
-    get 'items/new'
-    get 'items/index'
-    get 'items/show'
-    get 'items/edit'
-  end
+
   devise_for :user,controllers: {
     sessions: "user/sessions"
   }

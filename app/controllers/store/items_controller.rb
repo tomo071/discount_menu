@@ -7,6 +7,7 @@ class Store::ItemsController < ApplicationController
     @item = Item.new(items_params)
     @item.genre.store.id = current_stoer.id
     @item.save
+    redirect_to store_items_path
   end
 
   def index
