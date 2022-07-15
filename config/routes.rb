@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   namespace :admin do
     get 'reshipes/index'
   end
@@ -16,10 +16,10 @@ Rails.application.routes.draw do
   namespace :user do
     get 'items/index'
     get 'items/show'
+
   end
   namespace :store do
-    get 'genres/index'
-    get 'genres/edit'
+    resources :genres, only: [:index, :create, :edit, :update]
   end
   namespace :admin do
     get 'stores/index'
@@ -38,11 +38,11 @@ Rails.application.routes.draw do
   devise_for :user,controllers: {
     sessions: "user/sessions"
   }
-  
+
   devise_for :store,controllers: {
     sessions: "store/sessions"
   }
-  
+
   devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     sessions: "admin/sessions"
   }
