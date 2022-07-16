@@ -14,9 +14,7 @@ Rails.application.routes.draw do
     get 'reshipes/edit'
   end
   namespace :user do
-    get 'items/index'
-    get 'items/show'
-
+    resources :items, only: [:index, :show]
   end
   namespace :store do
     resources :genres, only: [:index, :create, :edit, :update]
