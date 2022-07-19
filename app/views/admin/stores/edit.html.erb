@@ -1,2 +1,13 @@
-<h1>Admin::Stores#edit</h1>
-<p>Find me in app/views/admin/stores/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= @store.store_name %>
+      <%= @store.introduction %>
+      <%= @store.email %>
+      <%= form_with model: @store, url: edit_admin_store_path do |f| %>
+        <%= f.radio_button :approval, false %><%= f.label :approval, "無効" %>
+        <%= f.radio_button :approval, true %><%= f.label :approval, "有効" %>
+      <% end %>
+    </div>
+  </div>
+</div>

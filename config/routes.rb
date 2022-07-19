@@ -21,8 +21,7 @@ Rails.application.routes.draw do
     resources :items
   end
   namespace :admin do
-    get 'stores/index'
-    get 'stores/edit'
+    resources :stores, only: [:index, :edit, :update]
   end
   namespace :admin do
     get 'users/index'
