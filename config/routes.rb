@@ -9,10 +9,7 @@ Rails.application.routes.draw do
     get 'stores/show'
   end
   namespace :user do
-    get 'reshipes/new'
-    get 'reshipes/index'
-    get 'reshipes/show'
-    get 'reshipes/edit'
+    resources :reshipes
   end
   namespace :user do
     resources :items, only: [:index, :show]
@@ -25,8 +22,7 @@ Rails.application.routes.draw do
     resources :stores, only: [:index, :edit, :update]
   end
   namespace :admin do
-    get 'users/index'
-    get 'users/edit'
+    resources :users, only: [:index, :edit, :update]
   end
 
   devise_for :user,controllers: {
