@@ -1,2 +1,11 @@
-<h1>User::Reshipes#index</h1>
-<p>Find me in app/views/user/reshipes/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <% @reshipes.each do |reshipe| %>
+        <% image_tag reshipe.image, size: "200x200" %>
+        <% reshipe.title%>
+        <% reshipe.body %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,2 +1,9 @@
-<h1>User::Reshipes#show</h1>
-<p>Find me in app/views/user/reshipes/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <% image_tag @reshipe.image, size: "200x200" %>
+      <% @reshipe.title%>
+      <% @reshipe.body %>
+    </div>
+  </div>
+</div>
