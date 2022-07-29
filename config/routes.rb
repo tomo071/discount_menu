@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   end
   namespace :user do
     resources :items, only: [:index, :show]
+    resources :materials, only: [:index, :show, :create, :destroy]
+    get 'material/all_destroy'
   end
   namespace :store do
     resources :genres, only: [:index, :create, :edit, :update]
@@ -23,10 +25,9 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     resources :stores, only: [:index, :edit, :update]
-  end
-  namespace :admin do
     resources :users, only: [:index, :edit, :update]
   end
+
 
   devise_for :user,controllers: {
     sessions: "user/sessions"

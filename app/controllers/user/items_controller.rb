@@ -9,5 +9,8 @@ class User::ItemsController < ApplicationController
   end
 
   def show
+    @item=Item.find(params[:id])
+    @material=Material.new
+    redirect_to user_materials_path
   end
 end

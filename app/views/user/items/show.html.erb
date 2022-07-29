@@ -1,9 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-       <%= @item.genre.name %>
-       <%= @item.item_name %>
-       <%= @item.price %>
+      <%= @item.genre.name %>
+      <%= @item.item_name %>
+      <%= @item.price %>
+      <% if @item.discount %>
+        <p>通常販売中</p>
+      <% else %>
+        <p>セール中</p>
+      <% end 
+      <%= form_with model: @cart_item, url:user_materials_path do |f| %>
+        <%= f.hidden_field :item_id, :value=>@item.id %>
+        <%= f.submit "材料として保存する", class:"btn btn-secondary"%>
+      <% end %>
     </div>
   </div>
 </div>
