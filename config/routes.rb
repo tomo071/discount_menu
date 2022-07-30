@@ -8,14 +8,13 @@ Rails.application.routes.draw do
     get 'reshipes/index'
   end
 
-  namespace :user do
-    resources :reshipes
-  end
+
   namespace :user do
     resources :items, only: [:index, :show]
     resources :materials, only: [:index, :show, :create, :destroy]
     get 'material/all_destroy'
     resources :stores, only: [:index, :show]
+    resources :reshipes
   end
   namespace :store do
     resources :genres, only: [:index, :create, :edit, :update]

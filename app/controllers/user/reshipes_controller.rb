@@ -10,8 +10,10 @@ class User::ReshipesController < ApplicationController
       @reshipe.item_id=material.id
       @reshipe.save
     end
-    @reshipe.user_id=current_user.
+    @reshipe.user_id=current_user.id
     @reshipe.save
+    @materials.delete_all
+    redirect_to user_reshipe_path(@reshipe.id)
   end
 
   def index
