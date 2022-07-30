@@ -7,10 +7,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'reshipes/index'
   end
-  namespace :user do
-    get 'stores/index'
-    get 'stores/show'
-  end
+
   namespace :user do
     resources :reshipes
   end
@@ -18,6 +15,7 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :show]
     resources :materials, only: [:index, :show, :create, :destroy]
     get 'material/all_destroy'
+    resources :stores, only: [:index, :show]
   end
   namespace :store do
     resources :genres, only: [:index, :create, :edit, :update]
@@ -26,6 +24,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :stores, only: [:index, :edit, :update]
     resources :users, only: [:index, :edit, :update]
+    resources :reshipes, only: [:index, :destroy]
   end
 
 

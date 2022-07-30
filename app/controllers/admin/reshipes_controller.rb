@@ -4,4 +4,9 @@ class Admin::ReshipesController < ApplicationController
     @reshipe=Reshipe.all
   end
   
+  def destroy
+    @reshipe=Reshipe.find(params[:id])
+    @reshipe.delete
+  end
+  
 end

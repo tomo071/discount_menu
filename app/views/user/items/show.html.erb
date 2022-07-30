@@ -8,8 +8,8 @@
         <p>通常販売中</p>
       <% else %>
         <p>セール中</p>
-      <% end 
-      <%= form_with model: @cart_item, url:user_materials_path do |f| %>
+      <% end %>
+      <%= form_with model: @material, url:user_materials_path do |f| %>
         <%= f.hidden_field :item_id, :value=>@item.id %>
         <%= f.submit "材料として保存する", class:"btn btn-secondary"%>
       <% end %>

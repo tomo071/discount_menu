@@ -4,8 +4,13 @@ class User::ReshipesController < ApplicationController
   end
 
   def create
+    @materials=current_user.material
     @reshipe=Reshipe.new(reshipes_params)
-    @reshipe.user=current_user
+    @materials.each do |material|
+      @reshipe.item_id=material.id
+      @reshipe.save
+    end
+    @reshipe.user_id=current_user.
     @reshipe.save
   end
 
