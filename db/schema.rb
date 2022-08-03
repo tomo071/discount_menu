@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2022_07_27_105457) do
   create_table "items", force: :cascade do |t|
     t.string "item_name"
     t.integer "price"
+    t.integer "sale_price"
     t.integer "genre_id"
     t.boolean "discount", default: false
     t.datetime "created_at", precision: 6, null: false

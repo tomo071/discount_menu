@@ -4,6 +4,7 @@ class CreateItems < ActiveRecord::Migration[6.1]
 
       t.string :item_name
       t.integer :price
+      t.integer :sale_price
       t.integer :genre_id
 
       t.boolean :discount, default:false
