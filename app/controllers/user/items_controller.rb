@@ -1,6 +1,6 @@
 class User::ItemsController < ApplicationController
   def index
-    @items=Item.all
+    @items=Item.find(params[:store_id])
     @genres=Genre.all
     unless params[:genre_id]==nil
       @genre=Genre.find(params[:genre_id])
