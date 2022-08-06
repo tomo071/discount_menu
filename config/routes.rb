@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  namespace :user do
-    get 'material/index'
-  end
+  
   root 'homes#top'
   namespace :admin do
     get 'reshipes/index'
