@@ -1,2 +1,13 @@
-<h1>Store::Items#index</h1>
-<p>Find me in app/views/store/items/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <% @items.each do  |item| %>
+       <%= item.genre.name %>
+       <%= link_to edit_store_item(item.id) do %>
+         <%= item.item_name %>
+       <% end %>
+       <%= item.price %>
+      <% end %>
+    </div>
+  </div>
+</div>
