@@ -1,2 +1,14 @@
-<h1>Store::Items#edit</h1>
-<p>Find me in app/views/store/items/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <div>
+        <%= form_with model: @item, url:store_item do |f|%>
+          <%= f.text_field :item_name %>
+          <%= f.number_field :price %>
+          <%= f.select :genre_id, Genre.all.map { |genre| [genre.name, genre.id] } %>
+          <%= f.submit "変更"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
