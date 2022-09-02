@@ -2,11 +2,18 @@
   <div class="row">
     <div class="col-12">
       <% @items.each do  |item| %>
-       <%= item.genre.name %>
-       <%= link_to edit_store_item(item.id) do %>
-         <%= item.item_name %>
-       <% end %>
-       <%= item.price %>
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= item.item_name %></h5>
+            <p class="card-text"><%= item.genre.name %></p>
+            <p class="btn btn-primary">
+              <%= link_to edit_store_item(item.id) do %>
+                <%= item.price %>
+              <% end %>
+            </p>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
