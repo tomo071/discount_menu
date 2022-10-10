@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   root 'homes#top'
-  
+
   namespace :user do
     resources :items, only: [:index, :show]
     resources :materials, only: [:index, :show, :create, :destroy]
